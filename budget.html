@@ -1,3 +1,9 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.44.0/tabler-icons.min.css" />
 
@@ -27,8 +33,7 @@ body {
   font-family: 'DM Sans', sans-serif;
   background: var(--bg2);
   color: var(--text-primary);
-  min-height: 100vh;
-  padding: 1.5rem 1rem 3rem;
+  padding: 1.2rem;
 }
 
 .fna-page {
@@ -43,30 +48,30 @@ body {
   padding: 1rem;
 }
 
+/* HEADER */
 .fna-brand {
   font-size: 13px;
-  font-weight: 500;
-  letter-spacing: 0.1em;
-  color: var(--accent);
-  text-transform: uppercase;
   text-align: center;
+  color: var(--accent);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .fna-title {
   font-size: 30px;
-  font-weight: 500;
   text-align: center;
   margin-bottom: 4px;
 }
 
 .fna-sub {
   font-size: 14px;
-  color: var(--text-secondary);
-  line-height: 1.5;
   text-align: center;
+  color: var(--text-secondary);
   margin-bottom: 1rem;
+  line-height: 1.4;
 }
 
+/* DATE */
 .fna-date-row {
   display: flex;
   justify-content: center;
@@ -75,7 +80,6 @@ body {
 }
 
 .fna-date-row input {
-  max-width: 160px;
   padding: 5px 8px;
   border: 0.5px solid var(--border-strong);
   border-radius: var(--radius-md);
@@ -94,7 +98,7 @@ body {
   gap: 0.8rem;
 }
 
-/* SECTIONS */
+/* SECTION */
 .fna-section {
   background: var(--bg);
   border: 0.5px solid var(--border);
@@ -104,10 +108,9 @@ body {
 
 .fna-section-title {
   font-size: 12px;
-  font-weight: 500;
-  color: var(--text-secondary);
   text-transform: uppercase;
   letter-spacing: 0.06em;
+  color: var(--text-secondary);
   margin-bottom: 6px;
   padding-bottom: 4px;
   border-bottom: 0.5px solid var(--border);
@@ -119,39 +122,37 @@ body {
   margin-bottom: 6px;
 }
 
-/* ROWS */
+/* ROW */
 .fna-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 6px;
   margin-bottom: 3px;
+  gap: 6px;
 }
 
 .fna-row label {
   font-size: 14px;
   color: var(--text-secondary);
-  flex: 1;
 }
 
 .fna-row input[type=number],
 .fna-row input[type=text] {
   width: 90px;
-  font-size: 14px;
   padding: 3px 6px;
+  font-size: 14px;
   border: 0.5px solid var(--border-strong);
   border-radius: var(--radius-md);
   text-align: right;
 }
 
-/* TOTAL ROW */
+/* TOTAL */
 .fna-total-row {
   display: flex;
   justify-content: space-between;
   margin-top: 6px;
   padding-top: 6px;
   border-top: 0.5px solid var(--border);
-  font-size: 14px;
 }
 
 /* GRAND */
@@ -190,8 +191,8 @@ body {
 textarea,
 .fna-sig input {
   width: 100%;
-  font-size: 14px;
   padding: 6px;
+  font-size: 14px;
   border: 0.5px solid var(--border-strong);
   border-radius: var(--radius-md);
 }
@@ -200,9 +201,9 @@ textarea,
 .print-btn {
   display: block;
   margin: 1rem auto 0;
-  padding: 7px 16px;
+  padding: 8px 16px;
   border: 0.5px solid var(--border-strong);
-  background: none;
+  background: transparent;
   cursor: pointer;
 }
 
@@ -215,23 +216,22 @@ textarea,
 }
 
 /* =========================
-   PRINT OPTIMIZATION (ONE PAGE)
+   PRINT FIX (ONE PAGE GUARANTEE)
    ========================= */
 
 @page {
   size: letter;
-  margin: 0.4in;
+  margin: 0.35in;
 }
 
 @media print {
 
   body {
     background: white !important;
-    padding: 0 !important;
     font-size: 10px !important;
 
-    /* KEY: force single-page fit */
-    transform: scale(0.72);
+    /* KEY FIX: forces everything into one page */
+    transform: scale(0.73);
     transform-origin: top left;
   }
 
@@ -245,25 +245,16 @@ textarea,
   }
 
   .fna-grid {
-    gap: 0.5rem !important;
+    gap: 0.4rem !important;
   }
 
   .fna-col {
-    gap: 0.5rem !important;
+    gap: 0.4rem !important;
   }
 
   .fna-section {
     padding: 0.5rem !important;
     break-inside: avoid;
-  }
-
-  .fna-row {
-    margin-bottom: 2px !important;
-  }
-
-  .fna-row input {
-    width: 70px !important;
-    font-size: 10px !important;
   }
 
   .fna-title {
@@ -274,12 +265,26 @@ textarea,
     font-size: 10px !important;
   }
 
+  .fna-row label {
+    font-size: 10px !important;
+  }
+
+  .fna-row input {
+    font-size: 10px !important;
+    width: 70px !important;
+    padding: 2px 4px !important;
+  }
+
+  .fna-section-title {
+    font-size: 9px !important;
+  }
+
   .fna-metric-val {
     font-size: 14px !important;
   }
 
-  textarea {
-    min-height: 40px !important;
+  textarea,
+  .fna-sig input {
     font-size: 10px !important;
   }
 
@@ -288,6 +293,9 @@ textarea,
   }
 }
 </style>
+</head>
+
+<body>
 
 <div class="fna-page">
   <div class="fna-card">
@@ -295,7 +303,7 @@ textarea,
     <p class="fna-brand">Grounded Finance</p>
     <h1 class="fna-title">Financial Needs Assessment</h1>
     <p class="fna-sub">
-      Document net monthly income and expenses. Divide yearly amounts by 12.
+      Document net monthly income and expenses. Convert yearly amounts to monthly.
     </p>
 
     <div class="fna-date-row">
@@ -305,9 +313,10 @@ textarea,
 
     <div class="fna-grid">
 
-      <!-- LEFT -->
+      <!-- LEFT SIDE -->
       <div class="fna-col">
 
+        <!-- PRIVATE INCOME -->
         <div class="fna-section">
           <p class="fna-section-title">Private Income</p>
           <div class="fna-row"><label>Self</label><input type="number" class="inc"></div>
@@ -316,6 +325,7 @@ textarea,
           <div class="fna-total-row"><span>Total</span><span id="t-private">$0</span></div>
         </div>
 
+        <!-- PUBLIC INCOME -->
         <div class="fna-section">
           <p class="fna-section-title">Public Income</p>
           <div class="fna-row"><label>Unemployment</label><input type="number" class="inc"></div>
@@ -323,19 +333,28 @@ textarea,
           <div class="fna-total-row"><span>Total</span><span id="t-public">$0</span></div>
         </div>
 
+        <!-- AID -->
+        <div class="fna-section">
+          <p class="fna-section-title">Financial Aid</p>
+          <div class="fna-row"><label>Grants</label><input type="number" class="inc"></div>
+          <div class="fna-total-row"><span>Total</span><span id="t-aid">$0</span></div>
+        </div>
+
       </div>
 
-      <!-- RIGHT -->
+      <!-- RIGHT SIDE -->
       <div class="fna-col">
 
+        <!-- HOUSEHOLD -->
         <div class="fna-section">
-          <p class="fna-section-title">Household Expenses</p>
+          <p class="fna-section-title">Household</p>
           <div class="fna-row"><label>Rent</label><input type="number" class="exp"></div>
           <div class="fna-row"><label>Utilities</label><input type="number" class="exp"></div>
           <div class="fna-row"><label>Food</label><input type="number" class="exp"></div>
           <div class="fna-total-row"><span>Total</span><span id="t-household">$0</span></div>
         </div>
 
+        <!-- TRANSPORT -->
         <div class="fna-section">
           <p class="fna-section-title">Transportation</p>
           <div class="fna-row"><label>Car</label><input type="number" class="exp"></div>
@@ -343,9 +362,17 @@ textarea,
           <div class="fna-total-row"><span>Total</span><span id="t-transport">$0</span></div>
         </div>
 
+        <!-- HEALTH -->
+        <div class="fna-section">
+          <p class="fna-section-title">Health</p>
+          <div class="fna-row"><label>Insurance</label><input type="number" class="exp"></div>
+          <div class="fna-total-row"><span>Total</span><span id="t-health">$0</span></div>
+        </div>
+
       </div>
     </div>
 
+    <!-- GRAND TOTAL -->
     <div class="fna-grand">
       <div class="fna-metric">
         <div class="fna-metric-label">Income</div>
@@ -361,9 +388,10 @@ textarea,
       </div>
     </div>
 
+    <!-- SIGNATURE -->
     <div class="fna-bottom">
       <div class="fna-section">
-        <p class="fna-section-title">Client Name</p>
+        <p class="fna-section-title">Name</p>
         <input type="text">
       </div>
       <div class="fna-section">
@@ -372,7 +400,7 @@ textarea,
       </div>
     </div>
 
-    <button class="print-btn" onclick="window.print()">Print / Save PDF</button>
+    <button class="print-btn" onclick="window.print()">Print / PDF</button>
 
   </div>
 
@@ -394,12 +422,15 @@ textarea,
     document.getElementById('grand-exp').textContent = fmt(exp);
 
     const net = inc - exp;
-    const netEl = document.getElementById('grand-net');
-    netEl.textContent = fmt(net);
-    netEl.style.color = net >= 0 ? '#059669' : '#dc2626';
+    const el = document.getElementById('grand-net');
+    el.textContent = fmt(net);
+    el.style.color = net >= 0 ? '#059669' : '#dc2626';
   }
 
-  document.querySelectorAll('.inc,.exp').forEach(el=>el.addEventListener('input',recalc));
+  document.querySelectorAll('.inc,.exp').forEach(e=>e.addEventListener('input',recalc));
   recalc();
 })();
 </script>
+
+</body>
+</html>
