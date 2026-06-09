@@ -61,9 +61,33 @@ textarea:focus { border-color: var(--accent); }
 .print-btn:hover { background: var(--bg2); }
 .fna-footer { text-align: center; font-size: 14px; color: var(--text-tertiary); margin-top: 1.5rem; letter-spacing: 0.04em; }
 @media print {
-  body { background: white; padding: 0; }
-  .print-btn { display: none; }
-  .fna-page { max-width: 100%; }
+  * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  body { background: white !important; padding: 0 !important; margin: 0 !important; font-size: 11px !important; }
+  .print-btn { display: none !important; }
+  .fna-page { max-width: 100% !important; padding: 0 !important; }
+  .fna-card { border: none !important; padding: 0.5rem !important; }
+  .fna-brand { font-size: 10px !important; }
+  .fna-title { font-size: 18px !important; margin-bottom: 4px !important; }
+  .fna-sub { font-size: 10px !important; margin-bottom: 8px !important; }
+  .fna-date-row { margin-bottom: 8px !important; }
+  .fna-grid { display: grid !important; grid-template-columns: 1fr 1fr !important; gap: 0.5rem !important; }
+  .fna-col { display: flex !important; flex-direction: column !important; gap: 0.5rem !important; }
+  .fna-section { padding: 0.5rem !important; border: 0.5px solid #ccc !important; border-radius: 4px !important; break-inside: avoid !important; page-break-inside: avoid !important; }
+  .fna-section-title { font-size: 9px !important; margin-bottom: 6px !important; padding-bottom: 4px !important; }
+  .fna-row { margin-bottom: 3px !important; }
+  .fna-row label { font-size: 10px !important; }
+  .fna-row input[type=number], .fna-row input[type=text] { font-size: 10px !important; width: 80px !important; padding: 2px 4px !important; border: 0.5px solid #ccc !important; border-radius: 2px !important; }
+  .fna-total-row { padding-top: 4px !important; margin-top: 4px !important; }
+  .fna-total-row span { font-size: 10px !important; }
+  .fna-grand { display: grid !important; grid-template-columns: 1fr 1fr 1fr !important; gap: 0.5rem !important; padding: 0.5rem !important; margin-top: 0.5rem !important; border: 0.5px solid #ccc !important; }
+  .fna-metric-label { font-size: 9px !important; }
+  .fna-metric-val { font-size: 14px !important; }
+  .fna-bottom-full { margin-top: 0.5rem !important; }
+  .fna-bottom { gap: 0.5rem !important; margin-top: 0.5rem !important; }
+  textarea { font-size: 10px !important; min-height: 40px !important; border: 0.5px solid #ccc !important; }
+  .fna-sig input { font-size: 10px !important; border: 0.5px solid #ccc !important; }
+  .fna-footer { font-size: 9px !important; margin-top: 0.5rem !important; }
+  .fna-note { font-size: 9px !important; }
 }
 </style>
 
